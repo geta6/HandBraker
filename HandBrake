@@ -1,0 +1,8 @@
+#!/bin/sh
+HandBrakeCLI -i "$1" -o "$2" \
+	-e x264 -r 24 -X 1280 --denoise="weak" -5 -O -m -2 -T\
+	-E faac -B 128 -R Auto -6 dpl2 $3\
+	-x level=31:bframes=0:cabac=0:keyint=250:min-keyint=25:\
+	merange=24:subq=6:ref=8:mixed-refs=1:qcomp=0.6:vbv-maxrate=1500:vbv-bufsize=2000:\
+	analyse=all:threads=0:me=umh:no-fast-pskip=1:deblock=-2,-2:no-dct-decimate=1:\
+	non-deterministic=1:weightb=0:8x8dct=0:cqm=flat:aq-strength=0:psy-rd=0,0

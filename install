@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo "deb http://ppa.launchpad.net/handbrake-ubuntu/ubuntu lucid main\ndeb-src http://ppa.launchpad.net/handbrake-ubuntu/ubuntu lucid main" >> /etc/apt/sources.list.d/handbrake-ubuntu.list
+apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 62D38753
+apt-get update
+apt-get install handbrake-cli
